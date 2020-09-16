@@ -18,10 +18,35 @@
     </div>
     <script src="script.js"></script>
     <script>
-        posicionar(document.getElementsByClassName('no').item(0), 4, 4);
-        posicionar(document.getElementsByClassName('no').item(1), 5, 4);
-        posicionar(document.getElementsByClassName('no').item(2), 6, 4);
-        posicionar(document.getElementsByClassName('no').item(3), 7, 4);
+        
+        let cobra = [
+            {
+                x: 7,
+                y: 4,
+                no: document.getElementsByClassName('no').item(0)
+            },
+            {
+                x: 6,
+                y: 4,
+                no: document.getElementsByClassName('no').item(1)
+            },
+            {
+                x: 5,
+                y: 4,
+                no: document.getElementsByClassName('no').item(2)
+            },
+            {
+                x: 4,
+                y: 4,
+                no: document.getElementsByClassName('no').item(3)
+            },
+        ];
+        
+        setInterval(function() {
+            for (let i = 0; i < cobra.length ; i++) {
+                posicionar(cobra[i].no, cobra[i].x++, cobra[i].y);
+            }
+        }, 500);
     </script>
 </body>
 </html>
